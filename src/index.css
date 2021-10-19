@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://images.ctfassets.net/fo9twyrwpveg/65pf6acJXWd9cHNJ1GxNTk/4fc60a3afb1ecbdc2e138e70f1744649/BLOG_BlankWaves-04.png?fm=webp&q=90&w=1536");
+}
+.app {
+  color: white;
 }
 
 code {
