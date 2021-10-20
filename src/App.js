@@ -25,14 +25,20 @@ function App() {
   const cityName = City;
   useEffect(() => {
     fetch('https://api.openweathermap.org/data/2.5/weather?q='+ cityName +'&units=metric&appid=ec1bf9f7316c92cc76873f61127a1d0a')
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => { 
+      if(!response.ok) {throw Error("Invalid City Name")}
+      return response.json()
+    })
+    .then((data) => {
       setTemp(data.main.temp)
       setMax(data.main.temp_max)
       setMin(data.main.temp_min)
       setText(data.weather[0].description)
       setIcon(Math.floor(data.weather[0].id/100))
-      // console.log(data)
+    })
+    .catch((error)=>{
+      alert(error);
+      setCity("Delhi")
     });
   },[City])
 
